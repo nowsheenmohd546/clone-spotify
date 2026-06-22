@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<div class="topbar">
+  <div class="user-avatar">N</div>
+  <div class="filter-pills">
+    <button class="pill active" onclick="setPill(this)">All</button>
+    <button class="pill" onclick="setPill(this)">Music</button>
+    <button class="pill" onclick="setPill(this)">Podcasts</button>
+  </div>
+</div>
+
+<!-- ── SCROLLABLE CONTENT ── -->
+<div class="scroll-content">
+
+  <!-- Quick Grid -->
+  <div class="quick-grid">
+    <div class="quick-item" onclick="playTrack('Liked Songs','Your Library','💜','#4a0f7c')">
+      <div class="quick-art liked">♥</div>
+      <span>Liked Songs</span>
+    </div>
+    <div class="quick-item" onclick="playTrack('Jhol','Shubh','🎵','#1a1a2e')">
+      <div class="quick-art" style="background:linear-gradient(135deg,#1a1a2e,#4286f4)">🎵</div>
+      <span>Jhol</span>
+    </div>
+    <div class="quick-item" onclick="playTrack('Jhol - Acoustic','Shubh','🎸','#134e5e')">
+      <div class="quick-art" style="background:linear-gradient(135deg,#134e5e,#71b280)">🎸</div>
+      <span>Jhol - Acoustic</span>
+    </div>
+    <div class="quick-item" onclick="playTrack('Aye Dil Hai Mushkil','Pritam','❤️','#8b0000')">
+      <div class="quick-art" style="background:linear-gradient(135deg,#8b0000,#e94560)">❤️</div>
+      <span>Aye Dil Hai Mushkil</span>
+    </div>
+    <div class="quick-item" onclick="playTrack('Chor','Various Artists','🌙','#1a1a2e')">
+      <div class="quick-art" style="background:linear-gradient(135deg,#1a1a2e,#535353)">🌙</div>
+      <span>Chor</span>
+    </div>
+  </div>
+
+  <!-- Albums Section -->
+  <section class="shelf">
+    <h2 class="shelf-title">Albums featuring songs you like</h2>
+    <div class="shelf-row">
+      <div class="shelf-card" onclick="playTrack('Ae Dil Hai Mushkil','Pritam','❤️','#8b0000')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#8b0000,#c0392b)">
+          <span class="art-label">AE DIL HAI MUSHKIL</span>
+          <span class="art-emoji">🎬</span>
+        </div>
+        <p class="card-type">Album</p>
+        <p class="card-name">Ae Dil Hai Mushkil (Original Motion Picture Soundtrac...</p>
+        <p class="card-sub">Pritam</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Ee Nagaraniki Emaindi','Vivek Sagar','🚗','#3d5a80')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#3d5a80,#98c1d9)">
+          <span class="art-emoji">🚗</span>
+        </div>
+        <p class="card-type">EP</p>
+        <p class="card-name">Ee Nagaraniki Emaindi</p>
+        <p class="card-sub">Vivek Sagar</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Best of Atif Aslam','Atif Aslam','🎤','#b91d73')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#b91d73,#f953c6)">
+          <span class="art-emoji">🎤</span>
+        </div>
+        <p class="card-type">Compilation</p>
+        <p class="card-name">Best of Atif Aslam</p>
+        <p class="card-sub">Atif Aslam</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Kabir Singh','Sachet-Parampara','💔','#1a1a2e')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#1a1a2e,#e94560)">
+          <span class="art-emoji">💔</span>
+        </div>
+        <p class="card-type">Album</p>
+        <p class="card-name">Kabir Singh</p>
+        <p class="card-sub">Sachet-Parampara</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended -->
+  <section class="shelf">
+    <h2 class="shelf-title">Recommended for today</h2>
+    <div class="shelf-row">
+      <div class="shelf-card" onclick="playTrack('Saiyaara','Mohit Chauhan','🏔️','#2c3e50')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#2c3e50,#3498db)">
+          <span class="art-emoji">🏔️</span>
+        </div>
+        <p class="card-type">Single</p>
+        <p class="card-name">Saiyaara</p>
+        <p class="card-sub">Mohit Chauhan</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Humsafar','Akhil Sachdeva','🏍️','#c0392b')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#c0392b,#e74c3c)">
+          <span class="art-emoji">🏍️</span>
+        </div>
+        <p class="card-type">Single</p>
+        <p class="card-name">Humsafar (From "Saiyaara")</p>
+        <p class="card-sub">Akhil Sachdeva</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Sahiba','Aditya Narayan','🌅','#8e44ad')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#8e44ad,#9b59b6)">
+          <span class="art-emoji">🌅</span>
+        </div>
+        <p class="card-type">Single</p>
+        <p class="card-name">Sahiba</p>
+        <p class="card-sub">Aditya Narayan</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Tum Hi Ho','Arijit Singh','🌹','#1abc9c')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#1abc9c,#16a085)">
+          <span class="art-emoji">🌹</span>
+        </div>
+        <p class="card-type">Single</p>
+        <p class="card-name">Tum Hi Ho</p>
+        <p class="card-sub">Arijit Singh</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Your Top Mixes -->
+  <section class="shelf">
+    <h2 class="shelf-title">Your top mixes</h2>
+    <div class="shelf-row">
+      <div class="shelf-card" onclick="playTrack('Hindi Mix','Various Artists','🎶','#8360c3')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#8360c3,#2ebf91)">
+          <span class="art-emoji">🎶</span>
+          <span class="mix-label">HINDI MIX</span>
+        </div>
+        <p class="card-type">Playlist</p>
+        <p class="card-name">Hindi Mix</p>
+        <p class="card-sub">Arijit Singh, Jubin Nautiyal and more</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Punjabi Mix','Various Artists','🔥','#f7971e')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#f7971e,#ffd200)">
+          <span class="art-emoji">🔥</span>
+          <span class="mix-label">PUNJABI MIX</span>
+        </div>
+        <p class="card-type">Playlist</p>
+        <p class="card-name">Punjabi Mix</p>
+        <p class="card-sub">Shubh, AP Dhillon and more</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Chill Mix','Various Artists','🌊','#134e5e')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#134e5e,#71b280)">
+          <span class="art-emoji">🌊</span>
+          <span class="mix-label">CHILL MIX</span>
+        </div>
+        <p class="card-type">Playlist</p>
+        <p class="card-name">Chill Mix</p>
+        <p class="card-sub">Arijit Singh, KK and more</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Telugu Mix','Various Artists','✨','#4a0f7c')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#4a0f7c,#e94560)">
+          <span class="art-emoji">✨</span>
+          <span class="mix-label">TELUGU MIX</span>
+        </div>
+        <p class="card-type">Playlist</p>
+        <p class="card-name">Telugu Mix</p>
+        <p class="card-sub">Sid Sriram, Anirudh and more</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recently Played -->
+  <section class="shelf">
+    <h2 class="shelf-title">Recently played</h2>
+    <div class="shelf-row">
+      <div class="shelf-card" onclick="playTrack('Blinding Lights','The Weeknd','🎸','#e94560')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#1a1a2e,#e94560)">🎸</div>
+        <p class="card-type">Single</p>
+        <p class="card-name">Blinding Lights</p>
+        <p class="card-sub">The Weeknd</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Kesariya','Arijit Singh','🧡','#f7971e')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#f7971e,#c0392b)">🧡</div>
+        <p class="card-type">Single</p>
+        <p class="card-name">Kesariya</p>
+        <p class="card-sub">Arijit Singh</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Raataan Lambiyan','Jubin Nautiyal','🌙','#1a1a2e')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#1a1a2e,#8360c3)">🌙</div>
+        <p class="card-type">Single</p>
+        <p class="card-name">Raataan Lambiyan</p>
+        <p class="card-sub">Jubin Nautiyal</p>
+      </div>
+      <div class="shelf-card" onclick="playTrack('Tera Ban Jaunga','Akhil','💙','#2980b9')">
+        <div class="shelf-art" style="background:linear-gradient(135deg,#2980b9,#6dd5fa)">💙</div>
+        <p class="card-type">Single</p>
+        <p class="card-name">Tera Ban Jaunga</p>
+        <p class="card-sub">Akhil</p>
+      </div>
+    </div>
+  </section>
+
+  <div style="height:100px"></div>
+</div>
+
+<!-- ── MINI PLAYER ── -->
+<div class="mini-player" id="mini-player" onclick="expandPlayer()">
+  <div class="mini-art" id="mini-art">🎵</div>
+  <div class="mini-info">
+    <p class="mini-title" id="mini-title">Side To Side</p>
+    <p class="mini-artist" id="mini-artist">Ariana Grande</p>
+  </div>
+  <div class="mini-controls">
+    <button class="mini-btn" onclick="event.stopPropagation();connectDevice()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 3H3a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h7v2H8v2h8v-2h-2v-2h7a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 13H4V5h16v11z"/></svg>
+    </button>
+    <button class="mini-btn" onclick="event.stopPropagation();addToQueue()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10h-2v3H8v2h3v3h2v-3h3v-2h-3z"/><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/></svg>
+    </button>
+    <button class="mini-play" id="mini-play" onclick="event.stopPropagation();togglePlay()">
+      <svg id="mini-play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <svg id="mini-pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ── FULL PLAYER (expanded) ── -->
+<div class="full-player" id="full-player">
+  <div class="fp-topbar">
+    <button class="fp-down" onclick="collapsePlayer()">&#8964;</button>
+    <div class="fp-context">
+      <p class="fp-context-label">PLAYING FROM PLAYLIST</p>
+      <p class="fp-context-name">Liked Songs</p>
+    </div>
+    <button class="fp-dots">•••</button>
+  </div>
+
+  <div class="fp-art" id="fp-art">🎵</div>
+
+  <div class="fp-info-row">
+    <div class="fp-info">
+      <p class="fp-title" id="fp-title">Side To Side</p>
+      <p class="fp-artist" id="fp-artist">Ariana Grande</p>
+    </div>
+    <button class="fp-heart" id="fp-heart" onclick="toggleHeart()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+    </button>
+  </div>
+
+  <div class="fp-progress">
+    <div class="progress-bar" id="fp-progress-bar" onclick="seekTo(event)">
+      <div class="progress-fill" id="fp-fill"></div>
+      <div class="progress-dot" id="fp-dot"></div>
+    </div>
+    <div class="progress-times">
+      <span id="fp-cur">0:00</span>
+      <span id="fp-dur">3:30</span>
+    </div>
+  </div>
+
+  <div class="fp-controls">
+    <button class="fp-ctrl shuffle" id="btn-shuffle" onclick="toggleShuffle()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/></svg>
+    </button>
+    <button class="fp-ctrl" onclick="prevTrack()">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+    </button>
+    <button class="fp-play-btn" id="fp-play" onclick="togglePlay()">
+      <svg id="fp-play-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <svg id="fp-pause-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+    <button class="fp-ctrl" onclick="nextTrack()">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+    </button>
+    <button class="fp-ctrl repeat" id="btn-repeat" onclick="toggleRepeat()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg>
+    </button>
+  </div>
+
+  <div class="fp-bottom">
+    <button class="fp-sm-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+    </button>
+    <div class="vol-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#b3b3b3"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+      <div class="vol-track" id="vol-track" onclick="setVolume(event)">
+        <div class="vol-fill" id="vol-fill" style="width:65%"></div>
+        <div class="vol-dot" id="vol-dot" style="left:65%"></div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#b3b3b3"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+    </div>
+    <button class="fp-sm-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ── BOTTOM NAV ── -->
+<nav class="bottom-nav">
+  <button class="bnav-btn active" onclick="setNav(this,'home')">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    <span>Home</span>
+  </button>
+  <button class="bnav-btn" onclick="setNav(this,'search')">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+    <span>Search</span>
+  </button>
+  <button class="bnav-btn" onclick="setNav(this,'library')">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
+    <span>Your Library</span>
+  </button>
+  <button class="bnav-btn" onclick="setNav(this,'premium')">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+    <span>Premium</span>
+  </button>
+  <button class="bnav-btn" onclick="setNav(this,'create')">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+    <span>Create</span>
+  </button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
